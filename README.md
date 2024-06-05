@@ -1,16 +1,23 @@
-# poke_api_test
+# Pokedex - Flutter
 
-A new Flutter project.
+This is a Flutter project that used [PokéAPI](https://pokeapi.co/) to display the listing and details of Pokémons.
 
-## Getting Started
+## How to test it
 
-This project is a starting point for a Flutter application.
+- Be sure that you have Flutter environment ready and set
+- Clone this project
+- Open your favorite IDE
+- Run `flutter pub get` in terminal
+- Just tap run and start getting fun 😁
 
-A few resources to get you started if this is your first Flutter project:
+## Project structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Architecture
+This project was built with Clean Architecture pattern with layers `data`, `domain` and `presentation`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### UI
+The UI was built with a list screen, to user be able to see Pokémons with its image and names and a detail screen where you can see more information about it.
+As the project uses an API to retrive information asynchronously, it was used `MOBX` to handle with main screen states: `Loading`, `Error` and `Success`
+
+### Data serialization
+To be easier to map json results from API to our model Dart class, this project uses [JSON Serialization](https://docs.flutter.dev/data-and-backend/serialization/json). This avoid the need of manually map each json attribute and create our class automatically with `.fromJson()` method.
